@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# Autocomplete Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features
+
+- **Tailwind CSS**: Provides utility-first CSS for rapid UI development.
+- **Floating UI**: Handles the positioning of the options window.
+- **Debounced Input**: Debounced search to improve performance on large datasets.
+- **Multiple Selections**: Supports selecting multiple options, and displays them as tags in the input field
+- **Keyboard and Mouse Controls**: Fully navigable via keyboard and mouse.
+
+## Getting Started with Create React App
+
+This project was bootstrapped with Create React App.
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.  
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Component Usage
 
-### `npm test`
+The app demonstrates the use of the Autocomplete component with different configurations:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Regular Autocomplete**: A simple autocomplete with single selection.
+- **Debounced Autocomplete**: Autocomplete with input debouncing and spinner.
+- **Multiple Select Autocomplete**: Autocomplete that supports selecting multiple options.
 
-### `npm run build`
+## Props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Autocomplete component accepts the following props:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Name          | Type                  | Description                                                             |
+| ------------- | --------------------- | ----------------------------------------------------------------------- |
+| `label`       | `string`              | The label to display above the component.                               |
+| `description` | `string`              | The description to display below the component.                         |
+| `disabled`    | `boolean`             | If true, the component is disabled.                                      |
+| `loading`     | `boolean`             | If true, the component shows a loading spinner.                          |
+| `multiple`    | `boolean`             | If true, multiple selections are supported.                              |
+| `onChange`    | `(value: T \| T[]) => void` | The callback fired when the value changes.                             |
+| `onInputChange` | `(inputValue: string) => void` | The callback fired when the input value changes.               |
+| `options`     | `T[]`                 | Array of options to be displayed.                                        |
+| `placeholder` | `string`              | The placeholder text for the search input.                              |
+| `renderOption` | `(option: T) => React.ReactNode` | Customizes the rendered option display.                             |
+| `value`       | `T \| T[]`            | The selected value(s) of the autocomplete.                               |
+| `filterOptions` | `(options: T[], inputValue: string) => T[]` | Custom filtering function for the options.               |
