@@ -9,8 +9,6 @@
 - **Multiple Selections**: Supports selecting multiple options, and displays them as tags in the input field
 - **Keyboard and Mouse Controls**: Fully navigable via keyboard and mouse.
 
-## Getting Started with Create React App
-
 This project was bootstrapped with Create React App.
 
 ### Available Scripts
@@ -48,3 +46,8 @@ The Autocomplete component accepts the following props:
 | `renderOption` | `(option: T) => React.ReactNode` | Customizes the rendered option display.                             |
 | `value`       | `T \| T[]`            | The selected value(s) of the autocomplete.                               |
 | `filterOptions` | `(options: T[], inputValue: string) => T[]` | Custom filtering function for the options.               |
+
+### Additional Props
+
+- **`debounceDelay`**: Added to the `DebouncedAutocomplete` component to control the debounce delay in milliseconds.
+
